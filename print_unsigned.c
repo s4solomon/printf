@@ -1,19 +1,19 @@
 #include "main.h"
 
 /**
- * print_string - Print string
- * @list: list.
+ * print_unsigned - Print a unsigned int
+ * @list: Number to print
  *
- * Return: String length.
- */
-
-int print_string(va_list list)
+ * Return: Length of the number
+ **/
+int print_unsigned(va_list list)
 {
-	char *p;
-	int p_len;
+	char *p_buff;
+	int size;
 
-	p = va_arg(list, char*);
-	p_len = print((p != NULL) ? p : "(null)");
+	p_buff = itoa(va_arg(list, unsigned int), 10);
 
-	return (p_len);
+	size = print((p_buff != NULL) ? p_buff : "NULL");
+
+	return (size);
 }
